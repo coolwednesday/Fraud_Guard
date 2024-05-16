@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Form</title>
+</head>
+
+<body>
+    <h2>Fetch User Details</h2>
+    <form id="userDetailsForm">
+        <label for="uuid">Enter User UUID:</label><br>
+        <input type="text" id="uuid" name="uuid" required><br><br>
+        <button type="submit">Fetch Details</button>
+    </form>
+
+    <div id="userDetails"></div>
+
+    <script>
+        document.getElementById("userDetailsForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            var uuid = document.getElementById("uuid").value; // Get the value of the UUID input field
+
+            // Create an object with the UUID
+            var requestData = {
+                uuid: uuid
+            };
+
+            // Send the UUID to the backend service
+            fetch("/predict", {
+                method: "POST",
+                body: JSON.stringify(requestData), // Convert the requestData object to JSON string
+                headers: {
+                    "Content-Type": "application/json" // Set the content-type to application/json
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the user details on the page
+                    var userDetailsDiv = document.getElementById('userDetails');
+                    userDetailsDiv.innerHTML = ''; // Clear previous results
+
+                    // Loop through each prediction result and display it with a proper heading
+                    Object.keys(data).forEach(function (model) {
+                        var predictionHTML = "<h3>" + model + "</h3>" +
+                            "<p><strong>Prediction:</strong> " + data[model] + "</p>";
+                        userDetailsDiv.innerHTML += predictionHTML;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>
