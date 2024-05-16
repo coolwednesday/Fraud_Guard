@@ -4,8 +4,10 @@ Below is a simple demonstration of our deployed api depicting probabilities of f
 <video src="https://github.com/coolwednesday/Fraud_Guard/assets/98943137/d9531c94-9897-4822-9103-1512a6b8cd0f"/>
 
 
-Here We give the User-Id of the existing user in our graph database. 
+Here We give the User-Id of the existing user in our graph database.
+
 Api makes connection with Neo4j Graph Database and fetch the features.
+
 Our three models give probability of User being a fraud based on its graphical features. ( For more info , read report )
 
 
