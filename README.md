@@ -32,4 +32,6 @@ These models can be used alone or combined based on what a business needs. By of
 Our Api was Deployed on Cloud using Docker and Ml Cloud Run in GCP. The Deployment has been removed due to continuous billing charges.
 
 
-Below are the Relevant Screenshots :
+Checkout The Report For Further Information on Model Summaries/Performance and Dataset Exploration using Neo4j Graph Database & Python Libraries :
+
+https://github.com/coolwednesday/Fraud_Guard/blob/main/ProjectReport.pdf
