@@ -4,6 +4,7 @@ Below is a simple demonstration of our deployed api depicting probabilities of f
 <video src="https://github.com/coolwednesday/Fraud_Guard/assets/98943137/d9531c94-9897-4822-9103-1512a6b8cd0f"/>
 
 
+
 BASIC FLOW : -
 
 We give the User-Id of the existing user in our graph database.
@@ -11,6 +12,8 @@ We give the User-Id of the existing user in our graph database.
 Api makes connection with Neo4j Graph Database and fetch the features.
 
 Our three models give probability of User being a fraud based on its graphical features. ( For more info , read report )
+
+
 
 USECASES
 
@@ -23,6 +26,8 @@ b. Large Transaction Fraud Detection Model (TitanShield): Specifically designed 
 c. Precision-focused Model For Small Transactions (NanoGuard): Tailored for payment gateways processing many small transactions, NanoGuard puts accuracy first to avoid unnecessary flags. It's crucial for maintaining customer trust and operational efficiency, especially considering the sheer volume of transactions involved.
 
 These models can be used alone or combined based on what a business needs. By offering options tailored to different situations, our system helps payment gateways ensure secure transactions while keeping customers happy.
+
+
 
 Our Api was Deployed on Cloud using Docker and Ml Cloud Run in GCP. The Deployment has been removed due to continuous billing charges.
 
